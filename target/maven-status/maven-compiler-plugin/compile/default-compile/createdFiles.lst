@@ -1,1 +1,3 @@
 algo\App.class
+org\adilet\dnc\sort\InsertionSort.class
+org\adilet\dnc\sort\MergeSort.class
