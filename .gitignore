@@ -27,4 +27,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+<<<<<<< Updated upstream
 target/
+=======
+target/
+>>>>>>> Stashed changes
