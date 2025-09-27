@@ -1,0 +1,5 @@
+algo\App.class
+org\adilet\dnc\sort\InsertionSort.class
+org\adilet\dnc\sort\QuickSort.class
+org\adilet\dnc\select\DeterministicSelect.class
+org\adilet\dnc\sort\MergeSort.class
