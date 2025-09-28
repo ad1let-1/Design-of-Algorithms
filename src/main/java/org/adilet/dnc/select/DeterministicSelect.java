@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class DeterministicSelect {
 
+    // Публичный метод для вызова
     public static int select(int[] arr, int k) {
         if (arr == null || arr.length == 0) {
             throw new IllegalArgumentException("Массив пустой");
@@ -19,8 +20,8 @@ public class DeterministicSelect {
             return arr[left];
         }
 
-        int pivot = medianOfMedians(arr, left, right);
-        int pivotIndex = partition(arr, left, right, pivot);
+        int pivotValue = medianOfMedians(arr, left, right);
+        int pivotIndex = partition(arr, left, right, pivotValue);
 
         if (k == pivotIndex) {
             return arr[k];
@@ -31,8 +32,8 @@ public class DeterministicSelect {
         }
     }
 
+    // Разделение массива по pivot
     private static int partition(int[] arr, int left, int right, int pivotValue) {
-        // ищем индекс pivot
         int pivotIndex = left;
         for (int i = left; i <= right; i++) {
             if (arr[i] == pivotValue) {
@@ -42,27 +43,19 @@ public class DeterministicSelect {
         }
 
         swap(arr, pivotIndex, right);
-
         int storeIndex = left;
+
         for (int i = left; i < right; i++) {
             if (arr[i] < pivotValue) {
                 swap(arr, storeIndex, i);
                 storeIndex++;
             }
         }
-
         swap(arr, storeIndex, right);
-
         return storeIndex;
     }
 
-    private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
-
+    // Находим медиану медиан (группировка по 5)
     private static int medianOfMedians(int[] arr, int left, int right) {
         int n = right - left + 1;
         if (n < 5) {
@@ -80,4 +73,11 @@ public class DeterministicSelect {
 
         return medianOfMedians(medians, 0, medians.length - 1);
     }
+
+    private static void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
 }
+
