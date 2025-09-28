@@ -1,13 +1,20 @@
-package org.adilet.dnc.sort;
+package org.adilet.dnc;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.adilet.dnc.sort.QuickSort;
 
-public class MergeSortTest {
-    @Test
-    void testSortedArray() {
-        int[] arr = {1,2,3,4,5};
-        MergeSort.sort(arr);
-        assertArrayEquals(new int[]{1,2,3,4,5}, arr);
+import java.util.Arrays;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Random rnd = new Random(42);
+        int[] arr1 = rnd.ints(20, 0, 100).toArray();
+
+        System.out.println("Исходный массив:");
+        System.out.println(Arrays.toString(arr1));
+
+        QuickSort.sort(arr1);
+        System.out.println("QuickSort:");
+        System.out.println(Arrays.toString(arr1));
     }
 }
