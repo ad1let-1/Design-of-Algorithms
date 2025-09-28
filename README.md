@@ -48,15 +48,21 @@ A `Metrics` class is used to track:
 - Deterministic Select is close to linear.
 - Closest Pair is also `n log n`, but with larger constants.
 
-📊 *(Graph 1: running time vs input size)*
+# Assignment 1 — Divide & Conquer Algorithms
 
----
+## Experimental Results
 
-### Recursion depth (depth vs n)
-- MergeSort depth grows logarithmically.
-- QuickSort also stays `O(log n)` with some variation due to random pivots.
+### Running Time (time vs n)
+The plot shows MergeSort and QuickSort growing as n log n,  
+Select close to linear, and Closest Pair also n log n but with larger constants.
 
-📊 *(Graph 2: recursion depth vs input size)*
+![Running Time](running_time_vs_n.png)
+
+### Recursion Depth (depth vs n)
+MergeSort depth grows logarithmically, QuickSort also stays O(log n)  
+with some variation due to random pivots.
+
+![Recursion Depth](recursion_depth_vs_n.png)
 
 ---
 
@@ -75,3 +81,4 @@ Theoretical bounds (Master theorem, Akra–Bazzi) match experimental results:
 - Closest Pair is `Θ(n log n)` with larger constants.  
 
 **Main differences come from constant factors and JVM runtime behavior.**
+
