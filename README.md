@@ -49,6 +49,7 @@ A `Metrics` class is used to track:
 - Closest Pair is also `n log n`, but with larger constants.
 
 📊 *(Graph 1: running time vs input size)*
+![Running Time](running_time_vs_n.png)
 
 ---
 
@@ -57,6 +58,7 @@ A `Metrics` class is used to track:
 - QuickSort also stays `O(log n)` with some variation due to random pivots.
 
 📊 *(Graph 2: recursion depth vs input size)*
+![Recursion Depth](recursion_depth_vs_n.png)
 
 ---
 
@@ -75,3 +77,4 @@ Theoretical bounds (Master theorem, Akra–Bazzi) match experimental results:
 - Closest Pair is `Θ(n log n)` with larger constants.  
 
 **Main differences come from constant factors and JVM runtime behavior.**
+
